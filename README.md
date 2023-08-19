@@ -1,8 +1,11 @@
 # MERN AMAZONA
 
 Today, I am very exctied to start a new project to pursue my software engineer career
+//
 I wanna build a full stack project which this website maybe like Amazon to sell something
+/
 here we go!
+/
 
 # DAY 1
 
