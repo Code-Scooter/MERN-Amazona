@@ -1,4 +1,4 @@
-# MERN AMAZONA
+# MERN AMAZONA -- Full Stack Project
 
 Today, I am very exctied to start a new project to pursue my software engineer career.
 
