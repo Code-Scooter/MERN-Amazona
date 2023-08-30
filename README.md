@@ -13,3 +13,11 @@ here we go!
 2. Create a React web page
 
 3. Create a git repository: MERN - Amazona
+
+# DAY 7
+
+1. Create form inputs
+
+2. Handle save shipping address
+
+3. Add checkout wizard bar
