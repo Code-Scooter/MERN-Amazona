@@ -21,3 +21,9 @@ here we go!
 2. Handle save shipping address
 
 3. Add checkout wizard bar
+
+# DAY 15
+
+1. Inplement User Sign-Up Screen
+
+2.
