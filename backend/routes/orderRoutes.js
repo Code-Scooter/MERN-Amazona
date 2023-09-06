@@ -1,7 +1,5 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import User from '../models/userModel.js';
-import { generateToken } from '../utils.js';
 import Order from '../models/orderModel.js';
 import { isAuth } from '../utils.js';
 
@@ -18,12 +16,11 @@ orderRouter.post(
       shippingPrice: req.body.shippingPrice,
       taxPrice: req.body.taxPrice,
       totalPrice: req.body.totalPrice,
-      user: req.body._id,
+      user: req.user._id,
     });
 
     const order = await newOrder.save();
     res.status(201).send({ message: 'New Order Created', order });
   })
 );
-
 export default orderRouter;
