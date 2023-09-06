@@ -114,7 +114,7 @@ export default function CartScreen() {
                       variant="primary"
                       disabled={cartItems.length === 0}
                     >
-                      Procced to Check Out
+                      Proceed to Check Out
                     </Button>
                   </div>
                 </ListGroup.Item>
