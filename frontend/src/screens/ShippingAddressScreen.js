@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
-import CheckOutSteps from '../components/CheckoutSteps';
+import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function ShippingAddressScreen() {
   const navigate = useNavigate();
@@ -13,19 +13,18 @@ export default function ShippingAddressScreen() {
     userInfo,
     cart: { shippingAddress },
   } = state;
-
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
-  const [postal, setPostalCode] = useState(shippingAddress.postal || '');
-  const [country, setCountry] = useState(shippingAddress.country || '');
-
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress.postalCode || ''
+  );
   useEffect(() => {
     if (!userInfo) {
       navigate('/signin?redirect=/shipping');
     }
   }, [userInfo, navigate]);
-
+  const [country, setCountry] = useState(shippingAddress.country || '');
   const submitHandler = (e) => {
     e.preventDefault();
     ctxDispatch({
@@ -34,7 +33,7 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
-        postal,
+        postalCode,
         country,
       },
     });
@@ -44,20 +43,20 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
-        postal,
+        postalCode,
         country,
       })
     );
     navigate('/payment');
   };
-
   return (
     <div>
       <Helmet>
         <title>Shipping Address</title>
       </Helmet>
-      <CheckOutSteps step1 step2></CheckOutSteps>
-      <div className="container small-container">
+
+      <CheckoutSteps step1 step2></CheckoutSteps>
+      <div className="container small-container" style={{ maxWidth: '600px' }}>
         <h1 className="my-3">Shipping Address</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="fullName">
@@ -84,10 +83,10 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="postal">
+          <Form.Group className="mb-3" controlId="postalCode">
             <Form.Label>Postal Code</Form.Label>
             <Form.Control
-              value={postal}
+              value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               required
             />
