@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import CheckOutSteps from '../components/CheckOutSteps';
+import CheckOutSteps from '../components/CheckoutSteps';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';

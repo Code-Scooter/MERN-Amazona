@@ -26,4 +26,4 @@ here we go!
 
 1. Inplement User Sign-Up Screen
 
-2.
+2. Create Place Order Screen
