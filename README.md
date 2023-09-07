@@ -1,6 +1,6 @@
 # MERN AMAZONA -- Full Stack Project
 
-Today, I am very exctied to start a new project to pursue my software engineer career.
+I am very exctied to start a new project to pursue my software engineer career.
 
 So I wanna build a full stack project which this website maybe like Amazon to sell something.
 
@@ -27,3 +27,25 @@ here we go!
 1. Inplement User Sign-Up Screen
 
 2. Create Place Order Screen
+
+# DAY 16
+
+Pay Order By PayPal
+
+1. generate paypal client id
+
+2. create api to return client id
+
+3. install react-paypal-js
+
+4. use PayPalScriptProvider in index.js
+
+5. use usePayPalScriptReducer in Order Screen
+
+6. implement loadPaypalScript function
+
+7. render paypal button
+
+8. implement onApprove payment function
+
+9. create pay order api in backend
