@@ -83,3 +83,5 @@ Pay Order By PayPal
 6. Set database connection in heroku env variables
 
 7. Commit and push
+
+8. Fix logger-reducer bug
