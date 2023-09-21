@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import CheckoutSteps from '../components/CheckoutSteps';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+import CheckoutSteps from '../components/CheckoutSteps';
 import { Store } from '../Store';
 
 export default function PaymentMethodScreen() {
@@ -12,17 +12,15 @@ export default function PaymentMethodScreen() {
   const {
     cart: { shippingAddress, paymentMethod },
   } = state;
-
   const [paymentMethodName, setPaymentMethod] = useState(
-    paymentMethod || 'PayPal'
+    paymentMethod || 'Paypal'
   );
 
   useEffect(() => {
     if (!shippingAddress.address) {
-      navigate('shipping');
+      navigate('/shipping');
     }
   }, [shippingAddress, navigate]);
-
   const submitHandler = (e) => {
     e.preventDefault();
     ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethodName });
@@ -38,7 +36,7 @@ export default function PaymentMethodScreen() {
         </Helmet>
         <h1 className="my-3">Payment Method</h1>
         <Form onSubmit={submitHandler}>
-          <div className="mb-3">
+          <div className="my-3">
             <Form.Check
               type="radio"
               id="PayPal"

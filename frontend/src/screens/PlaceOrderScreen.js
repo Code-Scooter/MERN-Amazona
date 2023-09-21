@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,12 +7,11 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Store } from '../Store';
-import CheckoutSteps from '../components/CheckoutSteps';
-import Axios from 'axios';
-import LoadingBox from '../components/LoadingBox';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import { Store } from '../Store';
+import CheckoutSteps from '../components/CheckoutSteps';
+import LoadingBox from '../components/LoadingBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -28,11 +28,7 @@ const reducer = (state, action) => {
 
 export default function PlaceOrderScreen() {
   const navigate = useNavigate();
-
-  const [{ loading }, dispatch] = useReducer(reducer, {
-    loading: false,
-  });
-
+  const [{ loading }, dispatch] = useReducer(reducer, { loading: false });
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
