@@ -18,7 +18,7 @@ mongoose
     console.log(err.message);
   });
 
-const app = require('express');
+const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
