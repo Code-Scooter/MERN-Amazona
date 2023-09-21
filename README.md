@@ -84,4 +84,4 @@ Pay Order By PayPal
 
 7. Commit and push
 
-8. Fix logger-reducer bug
+8. Fix logger-reducer bug again
