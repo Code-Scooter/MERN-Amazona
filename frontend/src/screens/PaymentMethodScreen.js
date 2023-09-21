@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import CheckOutSteps from '../components/CheckoutSteps';
+import CheckoutSteps from '../components/CheckoutSteps';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -31,7 +31,7 @@ export default function PaymentMethodScreen() {
   };
   return (
     <div>
-      <CheckOutSteps step1 step2 step3></CheckOutSteps>
+      <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <div className="container small-container">
         <Helmet>
           <title>Payment Method</title>
